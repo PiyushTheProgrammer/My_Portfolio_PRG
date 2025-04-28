@@ -9,6 +9,7 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
 }
 
 body {
@@ -264,7 +265,7 @@ nav.scrolled {
 /* Header */
 header {
     text-align: center;
-    padding: 0;
+    padding: 100px 0 50px; /* Add top padding to prevent navbar overlap */
     position: relative;
     overflow: hidden;
     min-height: 100vh;
@@ -284,6 +285,7 @@ header {
     overflow: hidden;
     margin-top: -100px; /* Reduced overlap with the header */
     z-index: 10;
+    text-align: center; /* Center the SVG */
 }
 
 .page-transition svg {
@@ -549,6 +551,7 @@ header h1 {
     flex: 0 0 auto;
     position: relative;
     z-index: 2;
+    margin-bottom: 20px; /* Add space below the image */
 }
 
 .header-image-container::before {
@@ -580,14 +583,15 @@ header h1 {
 }
 
 .header-image-container img {
-    width: 250px;
-    height: 250px;
+    width: 220px; /* Reduced size to prevent overflow */
+    height: 220px;
     border-radius: 50%;
     border: 5px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     transition: all 0.5s ease;
     object-fit: cover;
     filter: brightness(1.05) contrast(1.05);
+    display: block; /* Ensure proper block display */
 }
 
 .header-image-container img:hover {
@@ -604,6 +608,7 @@ header h1 {
     padding-right: 5px;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
     animation: blinkCursor 0.7s step-end infinite;
     font-weight: 300;
     letter-spacing: 1px;
@@ -612,6 +617,7 @@ header h1 {
     padding: 10px 20px;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    max-width: 100%;
 }
 
 @keyframes blinkCursor {
@@ -749,11 +755,6 @@ section:not(:last-child)::before {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-#testimonials {
-    background-color: #f8f9fa;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-}
-
 #contact {
     background-color: #ffffff;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
@@ -796,11 +797,6 @@ section:not(:last-child)::before {
 
 .dark-mode #achievements {
     background-color: #222;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-.dark-mode #testimonials {
-    background-color: #1a1a1a;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -1145,7 +1141,10 @@ section h2::after {
     position: relative;
     width: 120px;
     height: 120px;
-    margin-bottom: 15px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .circle-progress {
@@ -1163,27 +1162,45 @@ section h2::after {
 .circle-progress i {
     font-size: 40px;
     transition: all 0.3s ease;
-    /* Color will be set dynamically by JavaScript */
-}
-
-.skill-card:hover .circle-progress i {
-    transform: scale(1.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    line-height: 1; /* Ensure proper centering */
+    width: auto;
+    height: auto;
+    color: inherit; /* Inherits stroke color from circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .circle-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    transform: rotate(-90deg);
+    transform: rotate(-90deg); /* Start from top */
+}
+
+.circle-svg circle {
+    cx: 50%;
+    cy: 50%;
+    r: calc(50% - 6px); /* Adjust radius based on stroke-width */
+    stroke-width: 6;
+    fill: none;
+}
+
+.circle-fill {
+    transition: stroke-dashoffset 0.8s ease;
+}
+
+.skill-card:hover .circle-progress i {
+    transform: translate(-50%, -50%) scale(1.2);
 }
 
 .circle-bg {
     fill: none;
     stroke: #e0e0e0;
     stroke-width: 8;
-    /* Make sure the background circle is clearly visible */
     opacity: 0.7;
 }
 
@@ -1194,13 +1211,11 @@ section h2::after {
 
 .circle-fill {
     fill: none;
-    /* stroke color will be set dynamically by JavaScript */
     stroke-width: 8;
-    stroke-dasharray: 315;
-    stroke-dashoffset: 315;
     transition: stroke-dashoffset 2s ease, stroke 0.5s ease;
-    /* Make sure the circle is visible */
     stroke-linecap: round; /* Rounded ends for smoother appearance */
+    transform-origin: center;
+    z-index: 1; /* Ensure proper stacking */
 }
 
 .skill-card h4 {
@@ -1216,7 +1231,6 @@ section h2::after {
 .skill-percent {
     font-size: 1rem;
     font-weight: 600;
-    /* Color will be set dynamically by JavaScript */
     transition: color 0.5s ease;
 }
 
@@ -1789,167 +1803,37 @@ footer {
     }
 }
 
-/* Testimonials Section */
-#testimonials {
-    padding: 80px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .skill-circle {
+        width: 85px;
+        height: 85px;
+    }
+
+    .circle-progress i {
+        font-size: 28px; /* Adjust icon size for smaller circles */
+    }
+
+    .circle-svg circle {
+        r: calc(50% - 4px); /* Adjust radius for smaller stroke-width */
+        stroke-width: 4;
+    }
 }
 
-.dark-mode #testimonials {
-    background-color: #1a1a1a;
-}
+@media (max-width: 480px) {
+    .skill-circle {
+        width: 70px;
+        height: 70px;
+    }
 
-.testimonials-container {
-    max-width: 1200px;
-    margin: 40px auto 0;
-    position: relative;
-}
+    .circle-progress i {
+        font-size: 20px; /* Adjust icon size for smallest circles */
+    }
 
-.testimonial-slider {
-    display: flex;
-    overflow-x: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    gap: 30px;
-    padding: 20px 0;
-}
-
-.testimonial-card {
-    flex: 0 0 calc(33.333% - 20px);
-    min-width: 280px;
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.dark-mode .testimonial-card {
-    background: #222;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.testimonial-quote {
-    font-size: 4rem;
-    color: #0072ff;
-    opacity: 0.2;
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    line-height: 1;
-}
-
-.dark-mode .testimonial-quote {
-    color: #ff9800;
-}
-
-.testimonial-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    text-align: left;
-    flex-grow: 1;
-    font-style: italic;
-    color: #555;
-}
-
-.dark-mode .testimonial-text {
-    color: #ccc;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: auto;
-}
-
-.testimonial-author-img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #0072ff;
-}
-
-.dark-mode .testimonial-author-img {
-    border-color: #ff9800;
-}
-
-.testimonial-author-info {
-    text-align: left;
-}
-
-.testimonial-author-name {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #333;
-}
-
-.dark-mode .testimonial-author-name {
-    color: #f5f5f5;
-}
-
-.testimonial-author-title {
-    font-size: 0.9rem;
-    color: #777;
-}
-
-.dark-mode .testimonial-author-title {
-    color: #aaa;
-}
-
-.testimonial-controls {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.testimonial-control {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: white;
-    border: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #0072ff;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-}
-
-.testimonial-control:hover {
-    background: #0072ff;
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 114, 255, 0.3);
-}
-
-.dark-mode .testimonial-control {
-    background: #333;
-    color: #ff9800;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode .testimonial-control:hover {
-    background: #ff9800;
-    color: #333;
-    box-shadow: 0 8px 15px rgba(255, 152, 0, 0.3);
+    .circle-svg circle {
+        r: calc(50% - 3px); /* Adjust radius for smallest stroke-width */
+        stroke-width: 3;
+    }
 }
 
 /* Achievements Section */
