@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -26,6 +27,7 @@
             <a href="#projects">Projects</a>
             <a href="#achievements">Achievements</a>
             <a href="#contact">Contact</a>
+            <a href="assets/resume/piyushgosaviresume.pdf" target="_blank"><i class="fas fa-file-alt"></i> Resume</a>
         </div>
 
         <div class="nav-buttons">
@@ -51,21 +53,26 @@
                 <p class="typewriter" data-text="Web Developer | Security Tester | Problem Solver"></p>
 
                 <div class="header-cta">
-                    <a href="#projects" class="header-btn primary-btn"><i class="fas fa-code"></i> View Projects</a>
-                    <a href="#contact" class="header-btn secondary-btn"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                    <a href="assets/resume/piyushgosaviresume.pdf" target="_blank" class="header-btn primary-btn"><i
+                            class="fas fa-file-alt"></i> View Resume</a>
+                    <a href="download-resume.html" onclick="downloadResume(); return false;"
+                        class="header-btn secondary-btn"><i class="fas fa-download"></i> Download Resume</a>
                 </div>
             </div>
 
             <div class="header-image-container">
-                <img src="profile.jpg" alt="Profile Picture">
+                <img src="assets/profile.jpg" alt="Profile Picture">
             </div>
         </div>
     </header>
 
     <!-- Transition element between header and content -->
     <div class="page-transition">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave-svg" preserveAspectRatio="xMidYMax meet">
-            <path fill="#ffffff" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,90.7C384,85,480,107,576,128C672,149,768,171,864,165.3C960,160,1056,128,1152,117.3C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave-svg"
+            preserveAspectRatio="xMidYMax meet">
+            <path fill="#ffffff" fill-opacity="1"
+                d="M0,160L48,144C96,128,192,96,288,90.7C384,85,480,107,576,128C672,149,768,171,864,165.3C960,160,1056,128,1152,117.3C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
         </svg>
     </div>
 
@@ -74,9 +81,14 @@
             <h2>About Me</h2>
             <div class="about-container">
                 <div class="about-text">
-                    <p>Hello! I'm <span class="highlight">Piyush Gosavi</span>, a passionate 3rd-year diploma student in Information Technology with a keen interest in web development and cybersecurity.</p>
-                    <p>I specialize in building responsive web applications and implementing security measures to protect digital assets. My journey in tech started when I was 15, tinkering with HTML and CSS to create simple websites.</p>
-                    <p>When I'm not coding, you can find me participating in CTF competitions, contributing to open-source projects, or exploring the latest tech trends. I believe in continuous learning and pushing the boundaries of what's possible with technology.</p>
+                    <p>Hello! I'm <span class="highlight">Piyush Gosavi</span>, a passionate 3rd-year diploma student in
+                        Information Technology with a keen interest in web development and cybersecurity.</p>
+                    <p>I specialize in building responsive web applications and implementing security measures to
+                        protect digital assets. My journey in tech started when I was 15, tinkering with HTML and CSS to
+                        create simple websites.</p>
+                    <p>When I'm not coding, you can find me participating in CTF competitions, contributing to
+                        open-source projects, or exploring the latest tech trends. I believe in continuous learning and
+                        pushing the boundaries of what's possible with technology.</p>
 
                     <div class="about-stats">
                         <div class="stat-box">
@@ -120,26 +132,30 @@
             </div>
         </section>
 
-        <section id="skills" data-aos="fade-up">
-            <h2>Skills</h2>
-            <div class="skills-intro">
+        <section id="skills">
+            <div class="skills-intro" data-aos="fade-up">
+                <h2>My Skills</h2>
+                <p>Here are some of my technical skills showcased with proficiency levels.</p>
                 <p>Here's a showcase of my technical expertise and proficiency in various technologies and tools.</p>
             </div>
 
             <div class="skills-container">
                 <div class="skill-groups">
+
                     <!-- Frontend Skills -->
-                    <div class="skill-group" data-aos="fade-up">
+                    <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
                         <h3 class="group-title">Frontend</h3>
                         <div class="skill-cards">
+
                             <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
                                 <div class="skill-circle" data-percent="90">
                                     <div class="circle-progress">
                                         <i class="fab fa-html5"></i>
                                     </div>
                                     <svg class="circle-svg" width="120" height="120" viewBox="0 0 120 120">
-                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
-                                        <circle class="circle-fill" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-bg" cx="50%" cy="50%" r="50"></circle>
+                                        <circle class="circle-fill" cx="50%" cy="50%" r="50" data-radius-desktop="50"
+                                            data-radius-mobile="34"></circle>
                                     </svg>
                                 </div>
                                 <h4>HTML/CSS</h4>
@@ -152,8 +168,9 @@
                                         <i class="fab fa-js-square"></i>
                                     </div>
                                     <svg class="circle-svg" width="120" height="120" viewBox="0 0 120 120">
-                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
-                                        <circle class="circle-fill" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-bg" cx="50%" cy="50%" r="50"></circle>
+                                        <circle class="circle-fill" cx="50%" cy="50%" r="50" data-radius-desktop="50"
+                                            data-radius-mobile="34"></circle>
                                     </svg>
                                 </div>
                                 <h4>JavaScript</h4>
@@ -166,28 +183,32 @@
                                         <i class="fab fa-react"></i>
                                     </div>
                                     <svg class="circle-svg" width="120" height="120" viewBox="0 0 120 120">
-                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
-                                        <circle class="circle-fill" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-bg" cx="50%" cy="50%" r="50"></circle>
+                                        <circle class="circle-fill" cx="50%" cy="50%" r="50" data-radius-desktop="50"
+                                            data-radius-mobile="34"></circle>
                                     </svg>
                                 </div>
                                 <h4>React.js</h4>
                                 <span class="skill-percent">45%</span>
                             </div>
+
                         </div>
                     </div>
 
                     <!-- Backend Skills -->
-                    <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="group-title">Backend</h3>
                         <div class="skill-cards">
+
                             <div class="skill-card" data-aos="zoom-in" data-aos-delay="250">
                                 <div class="skill-circle" data-percent="92">
                                     <div class="circle-progress">
                                         <i class="fab fa-python"></i>
                                     </div>
                                     <svg class="circle-svg" width="120" height="120" viewBox="0 0 120 120">
-                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
-                                        <circle class="circle-fill" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-bg" cx="50%" cy="50%" r="50"></circle>
+                                        <circle class="circle-fill" cx="50%" cy="50%" r="50" data-radius-desktop="50"
+                                            data-radius-mobile="34"></circle>
                                     </svg>
                                 </div>
                                 <h4>Python</h4>
@@ -200,8 +221,9 @@
                                         <i class="fas fa-server"></i>
                                     </div>
                                     <svg class="circle-svg" width="120" height="120" viewBox="0 0 120 120">
-                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
-                                        <circle class="circle-fill" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-bg" cx="50%" cy="50%" r="50"></circle>
+                                        <circle class="circle-fill" cx="50%" cy="50%" r="50" data-radius-desktop="50"
+                                            data-radius-mobile="34"></circle>
                                     </svg>
                                 </div>
                                 <h4>Flask/Django</h4>
@@ -214,28 +236,32 @@
                                         <i class="fas fa-database"></i>
                                     </div>
                                     <svg class="circle-svg" width="120" height="120" viewBox="0 0 120 120">
-                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
-                                        <circle class="circle-fill" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-bg" cx="50%" cy="50%" r="50"></circle>
+                                        <circle class="circle-fill" cx="50%" cy="50%" r="50" data-radius-desktop="50"
+                                            data-radius-mobile="34"></circle>
                                     </svg>
                                 </div>
                                 <h4>SQL/NoSQL</h4>
                                 <span class="skill-percent">83%</span>
                             </div>
+
                         </div>
                     </div>
 
                     <!-- DevOps & Security Skills -->
-                    <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-group" data-aos="fade-up" data-aos-delay="300">
                         <h3 class="group-title">DevOps & Security</h3>
                         <div class="skill-cards">
+
                             <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
                                 <div class="skill-circle" data-percent="75">
                                     <div class="circle-progress">
                                         <i class="fab fa-aws"></i>
                                     </div>
                                     <svg class="circle-svg" width="120" height="120" viewBox="0 0 120 120">
-                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
-                                        <circle class="circle-fill" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-bg" cx="50%" cy="50%" r="50"></circle>
+                                        <circle class="circle-fill" cx="50%" cy="50%" r="50" data-radius-desktop="50"
+                                            data-radius-mobile="34"></circle>
                                     </svg>
                                 </div>
                                 <h4>AWS</h4>
@@ -248,8 +274,9 @@
                                         <i class="fab fa-docker"></i>
                                     </div>
                                     <svg class="circle-svg" width="120" height="120" viewBox="0 0 120 120">
-                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
-                                        <circle class="circle-fill" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-bg" cx="50%" cy="50%" r="50"></circle>
+                                        <circle class="circle-fill" cx="50%" cy="50%" r="50" data-radius-desktop="50"
+                                            data-radius-mobile="34"></circle>
                                     </svg>
                                 </div>
                                 <h4>Docker</h4>
@@ -262,18 +289,21 @@
                                         <i class="fas fa-user-shield"></i>
                                     </div>
                                     <svg class="circle-svg" width="120" height="120" viewBox="0 0 120 120">
-                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
-                                        <circle class="circle-fill" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-bg" cx="50%" cy="50%" r="50"></circle>
+                                        <circle class="circle-fill" cx="50%" cy="50%" r="50" data-radius-desktop="50"
+                                            data-radius-mobile="34"></circle>
                                     </svg>
                                 </div>
                                 <h4>Web Security</h4>
                                 <span class="skill-percent">89%</span>
                             </div>
+
                         </div>
                     </div>
+
                 </div>
 
-                <div class="other-skills" data-aos="fade-up" data-aos-delay="300">
+                <div class="other-skills" data-aos="fade-up" data-aos-delay="400">
                     <h3>Other Skills</h3>
                     <div class="tag-cloud">
                         <span class="skill-tag"><i class="fab fa-git-alt"></i> Git & GitHub</span>
@@ -286,13 +316,15 @@
                         <span class="skill-tag"><i class="fas fa-terminal"></i> Command Line</span>
                     </div>
                 </div>
+
             </div>
         </section>
 
         <section id="projects" data-aos="fade-up">
             <h2>Projects</h2>
             <div class="projects-intro">
-                <p>Here are some of my recent projects that showcase my skills and expertise. Each project represents a unique challenge that I've tackled using different technologies and approaches.</p>
+                <p>Here are some of my recent projects that showcase my skills and expertise. Each project represents a
+                    unique challenge that I've tackled using different technologies and approaches.</p>
             </div>
             <div class="project-container">
                 <div class="project-card" data-aos="zoom-in">
@@ -304,7 +336,8 @@
                             <span class="project-tag">Data Science</span>
                         </div>
                         <h3>Stock Forecasting</h3>
-                        <p>Implemented stock price prediction using ARIMA, LSTM, and Linear Regression models with 85% accuracy on test data.</p>
+                        <p>Implemented stock price prediction using ARIMA, LSTM, and Linear Regression models with 85%
+                            accuracy on test data.</p>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                             <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -321,7 +354,8 @@
                             <span class="project-tag">Flask</span>
                         </div>
                         <h3>Sentiment Analysis</h3>
-                        <p>Developed an NLP model to analyze sentiments in tweets and reviews with a web interface for real-time analysis.</p>
+                        <p>Developed an NLP model to analyze sentiments in tweets and reviews with a web interface for
+                            real-time analysis.</p>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                             <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -338,9 +372,11 @@
                             <span class="project-tag">Security</span>
                         </div>
                         <h3>File Encryption & Decryption</h3>
-                        <p>Created a security tool for encrypting and decrypting files using AES-256 encryption to enhance privacy and data protection.</p>
+                        <p>Created a security tool for encrypting and decrypting files using AES-256 encryption to
+                            enhance privacy and data protection.</p>
                         <div class="project-links">
-                            <a href="https://github.com/PiyushTheProgrammer/File_Encryption-Decryption_Tool" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/PiyushTheProgrammer/File_Encryption-Decryption_Tool"
+                                class="project-link"><i class="fab fa-github"></i> GitHub</a>
                             <a href="#" class="project-link"><i class="fas fa-download"></i> Download</a>
                         </div>
                     </div>
@@ -355,10 +391,13 @@
                             <span class="project-tag">Responsive</span>
                         </div>
                         <h3>Portfolio Website</h3>
-                        <p>Designed and developed a responsive portfolio website with dark/light mode toggle and smooth animations.</p>
+                        <p>Designed and developed a responsive portfolio website with dark/light mode toggle and smooth
+                            animations.</p>
                         <div class="project-links">
-                            <a href="https://github.com/PiyushTheProgrammer/My_Portfolio_PRG" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://piyushtheprogrammer.github.io/My_Portfolio_PRG/" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                            <a href="https://github.com/PiyushTheProgrammer/My_Portfolio_PRG" class="project-link"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                            <a href="https://piyushtheprogrammer.github.io/My_Portfolio_PRG/" class="project-link"><i
+                                    class="fas fa-external-link-alt"></i> Live Site</a>
                         </div>
                     </div>
                 </div>
@@ -374,7 +413,8 @@
                         <i class="fas fa-award"></i>
                     </div>
                     <h3 class="achievement-title">AWS Certified Cloud Practitioner</h3>
-                    <p class="achievement-description">Earned AWS certification demonstrating foundational knowledge of cloud computing, security, and AWS services.</p>
+                    <p class="achievement-description">Earned AWS certification demonstrating foundational knowledge of
+                        cloud computing, security, and AWS services.</p>
                     <div class="achievement-date">December 2025</div>
                 </div>
 
@@ -403,10 +443,16 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Get In Touch</h3>
-                    <p><span class="contact-icon"><i class="fas fa-envelope"></i></span> <a href="mailto:piyushgosavi90@gmail.com">piyushgosavi90@gmail.com</a></p>
-                    <p><span class="contact-icon"><i class="fab fa-linkedin"></i></span> <a href="https://www.linkedin.com/in/piyush-gosavi-311a50291" target="_blank" rel="noopener noreferrer">linkedin.com/in/piyush-gosavi</a></p>
-                    <p><span class="contact-icon"><i class="fab fa-github"></i></span> <a href="https://github.com/PiyushTheProgrammer" target="_blank" rel="noopener noreferrer">github.com/PiyushTheProgrammer</a></p>
-                    <p><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span> Nashik, Maharashtra, India</p>
+                    <p><span class="contact-icon"><i class="fas fa-envelope"></i></span> <a
+                            href="mailto:piyushgosavi90@gmail.com">piyushgosavi90@gmail.com</a></p>
+                    <p><span class="contact-icon"><i class="fab fa-linkedin"></i></span> <a
+                            href="https://www.linkedin.com/in/piyush-gosavi-311a50291" target="_blank"
+                            rel="noopener noreferrer">linkedin.com/in/piyush-gosavi</a></p>
+                    <p><span class="contact-icon"><i class="fab fa-github"></i></span> <a
+                            href="https://github.com/PiyushTheProgrammer" target="_blank"
+                            rel="noopener noreferrer">github.com/PiyushTheProgrammer</a></p>
+                    <p><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span> Nashik, Maharashtra,
+                        India</p>
 
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
@@ -449,6 +495,7 @@
                 <a href="#projects">Projects</a>
                 <a href="#achievements">Achievements</a>
                 <a href="#contact">Contact</a>
+                <a href="assets/resume/piyushgosaviresume.pdf" target="_blank">Resume</a>
             </div>
 
             <div class="footer-social">
@@ -472,4 +519,5 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

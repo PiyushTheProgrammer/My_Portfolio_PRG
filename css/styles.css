@@ -9,7 +9,8 @@
 
 html {
     scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+    -webkit-text-size-adjust: 100%;
+    /* Prevent font scaling in landscape */
 }
 
 body {
@@ -26,14 +27,17 @@ body {
 
 /* Fixing Navbar Overlapping Issue */
 section {
-    padding: 120px 50px; /* Increased top padding */
-    scroll-margin-top: 80px; /* Adjusting offset for fixed navbar */
+    padding: 120px 50px;
+    /* Increased top padding */
+    scroll-margin-top: 80px;
+    /* Adjusting offset for fixed navbar */
 }
 
 @media (max-width: 768px) {
     section {
         padding: 100px 20px;
-        scroll-margin-top: 70px; /* Adjusting for smaller screens */
+        scroll-margin-top: 70px;
+        /* Adjusting for smaller screens */
     }
 }
 
@@ -94,6 +98,7 @@ nav.scrolled {
     display: flex;
     gap: 20px;
 }
+
 .nav-links a {
     position: relative;
     text-decoration: none;
@@ -101,6 +106,7 @@ nav.scrolled {
     font-weight: 500;
     transition: color 0.3s ease-in-out;
 }
+
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -129,6 +135,11 @@ nav.scrolled {
     color: #007bff;
 }
 
+/* Style for resume link in nav */
+.nav-links a i.fa-file-alt {
+    margin-right: 5px;
+}
+
 /* Nav Buttons Container */
 .nav-buttons {
     display: flex;
@@ -138,7 +149,8 @@ nav.scrolled {
 
 /* Menu Toggle Button */
 .menu-toggle {
-    display: none; /* Hidden by default on larger screens */
+    display: none;
+    /* Hidden by default on larger screens */
     background: none;
     border: none;
     cursor: pointer;
@@ -173,6 +185,7 @@ nav.scrolled {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -265,14 +278,16 @@ nav.scrolled {
 /* Header */
 header {
     text-align: center;
-    padding: 100px 0 50px; /* Add top padding to prevent navbar overlap */
+    padding: 100px 0 50px;
+    /* Add top padding to prevent navbar overlap */
     position: relative;
     overflow: hidden;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f8f9fa; /* Light background that matches the rest of the page */
+    background: #f8f9fa;
+    /* Light background that matches the rest of the page */
     background: linear-gradient(135deg, #f8f9fa, #e9ecef, #dee2e6);
     color: #333;
 }
@@ -283,9 +298,11 @@ header {
     height: 150px;
     width: 100%;
     overflow: hidden;
-    margin-top: -100px; /* Reduced overlap with the header */
+    margin-top: -100px;
+    /* Reduced overlap with the header */
     z-index: 10;
-    text-align: center; /* Center the SVG */
+    text-align: center;
+    /* Center the SVG */
 }
 
 .page-transition svg {
@@ -294,13 +311,16 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    transform: translateY(1px); /* Ensure no gap */
+    transform: translateY(1px);
+    /* Ensure no gap */
 }
 
 .wave-svg path {
     fill: #ffffff;
-    filter: drop-shadow(0 -5px 5px rgba(0, 0, 0, 0.05)); /* Add subtle shadow to make wave visible in light mode */
-    stroke: #f0f0f0; /* Add a subtle stroke */
+    filter: drop-shadow(0 -5px 5px rgba(0, 0, 0, 0.05));
+    /* Add subtle shadow to make wave visible in light mode */
+    stroke: #f0f0f0;
+    /* Add a subtle stroke */
     stroke-width: 1;
 }
 
@@ -330,6 +350,7 @@ header::before {
     0% {
         background-position: 0 0;
     }
+
     100% {
         background-position: 100px 100px;
     }
@@ -369,9 +390,12 @@ header::before {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0) scale(1);
     }
+
     50% {
         transform: translateY(-20px) scale(1.05);
     }
@@ -412,6 +436,7 @@ header::before {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -436,7 +461,8 @@ header h1 {
 
 #intro-text {
     margin-bottom: 1.5rem;
-    color: #333; /* Changed from semi-transparent white to dark gray for light theme */
+    color: #333;
+    /* Changed from semi-transparent white to dark gray for light theme */
     font-size: 2.5rem;
     font-weight: 300;
     letter-spacing: 1px;
@@ -479,6 +505,7 @@ header h1 {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -498,7 +525,8 @@ header h1 {
 }
 
 .dark-mode #intro-text {
-    color: rgba(255, 255, 255, 0.9); /* Increased opacity for better visibility */
+    color: rgba(255, 255, 255, 0.9);
+    /* Increased opacity for better visibility */
 }
 
 .dark-mode .name {
@@ -543,15 +571,23 @@ header h1 {
 }
 
 @keyframes blinkCursorDark {
-    from, to { border-color: transparent; }
-    50% { border-color: #ff9800; }
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #ff9800;
+    }
 }
 
 .header-image-container {
     flex: 0 0 auto;
     position: relative;
     z-index: 2;
-    margin-bottom: 20px; /* Add space below the image */
+    margin-bottom: 20px;
+    /* Add space below the image */
 }
 
 .header-image-container::before {
@@ -572,10 +608,12 @@ header h1 {
         transform: scale(0.95);
         opacity: 0.7;
     }
+
     50% {
         transform: scale(1);
         opacity: 0.3;
     }
+
     100% {
         transform: scale(0.95);
         opacity: 0.7;
@@ -583,7 +621,8 @@ header h1 {
 }
 
 .header-image-container img {
-    width: 220px; /* Reduced size to prevent overflow */
+    width: 220px;
+    /* Reduced size to prevent overflow */
     height: 220px;
     border-radius: 50%;
     border: 5px solid rgba(255, 255, 255, 0.2);
@@ -591,7 +630,8 @@ header h1 {
     transition: all 0.5s ease;
     object-fit: cover;
     filter: brightness(1.05) contrast(1.05);
-    display: block; /* Ensure proper block display */
+    display: block;
+    /* Ensure proper block display */
 }
 
 .header-image-container img:hover {
@@ -621,8 +661,15 @@ header h1 {
 }
 
 @keyframes blinkCursor {
-    from, to { border-color: transparent; }
-    50% { border-color: #0072ff; }
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #0072ff;
+    }
 }
 
 .header-cta {
@@ -678,9 +725,11 @@ header h1 {
 /* Sections - General Styling */
 section {
     padding: 80px 20px;
-    margin-bottom: 70px; /* Increased margin for better separation */
+    margin-bottom: 70px;
+    /* Increased margin for better separation */
     position: relative;
-    overflow: visible !important; /* Ensure separators are visible */
+    overflow: visible !important;
+    /* Ensure separators are visible */
 }
 
 /* Add a very visible section separator */
@@ -813,7 +862,8 @@ section h2 {
     margin-bottom: 30px;
     font-weight: bold;
     position: relative;
-    display: block; /* Changed from inline-block to block */
+    display: block;
+    /* Changed from inline-block to block */
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
@@ -1149,30 +1199,19 @@ section h2::after {
 
 .circle-progress {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2;
+    width: 100%;
+    height: 100%;
 }
 
 .circle-progress i {
-    font-size: 40px;
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    line-height: 1; /* Ensure proper centering */
-    width: auto;
-    height: auto;
-    color: inherit; /* Inherits stroke color from circle */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 24px;
+    color: inherit;
 }
 
 .circle-svg {
@@ -1184,17 +1223,9 @@ section h2::after {
 .circle-svg circle {
     cx: 50%;
     cy: 50%;
-    r: calc(50% - 6px); /* Adjust radius based on stroke-width */
+    r: calc(50% - 6px); /* Responsive radius */
     stroke-width: 6;
     fill: none;
-}
-
-.circle-fill {
-    transition: stroke-dashoffset 0.8s ease;
-}
-
-.skill-card:hover .circle-progress i {
-    transform: translate(-50%, -50%) scale(1.2);
 }
 
 .circle-bg {
@@ -1213,9 +1244,13 @@ section h2::after {
     fill: none;
     stroke-width: 8;
     transition: stroke-dashoffset 2s ease, stroke 0.5s ease;
-    stroke-linecap: round; /* Rounded ends for smoother appearance */
+    stroke-linecap: round;
     transform-origin: center;
-    z-index: 1; /* Ensure proper stacking */
+    z-index: 1;
+}
+
+.skill-card:hover .circle-progress i {
+    transform: translate(-50%, -50%) scale(1.2);
 }
 
 .skill-card h4 {
@@ -1310,6 +1345,7 @@ section h2::after {
     color: #ff9800;
 }
 
+
 /* Projects Section */
 #projects {
     text-align: center;
@@ -1364,14 +1400,18 @@ section h2::after {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    width: calc(33.333% - 20px); /* Make cards responsive */
-    min-width: 280px; /* Minimum width for small screens */
-    max-width: 350px; /* Maximum width for large screens */
+    width: calc(33.333% - 20px);
+    /* Make cards responsive */
+    min-width: 280px;
+    /* Minimum width for small screens */
+    max-width: 350px;
+    /* Maximum width for large screens */
     text-align: left;
     overflow: hidden;
     position: relative;
     display: flex;
-    flex-direction: column; /* Make card content stack vertically */
+    flex-direction: column;
+    /* Make card content stack vertically */
 }
 
 .project-card:hover {
@@ -1400,7 +1440,8 @@ section h2::after {
 
 .project-content {
     padding: 25px;
-    flex-grow: 1; /* Allow content to fill available space */
+    flex-grow: 1;
+    /* Allow content to fill available space */
     display: flex;
     flex-direction: column;
 }
@@ -1449,8 +1490,10 @@ section h2::after {
 .project-links {
     display: flex;
     gap: 15px;
-    margin-top: auto; /* Push links to bottom of card */
-    flex-wrap: wrap; /* Allow links to wrap on very small screens */
+    margin-top: auto;
+    /* Push links to bottom of card */
+    flex-wrap: wrap;
+    /* Allow links to wrap on very small screens */
 }
 
 .project-link {
@@ -1517,6 +1560,7 @@ section h2::after {
     font-size: 1.2rem;
     transition: background 0.3s ease-in-out;
 }
+
 .view-projects:active {
     transform: scale(0.95);
 }
@@ -1793,12 +1837,16 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .footer-content, .footer-bottom {
+
+    .footer-content,
+    .footer-bottom {
         flex-direction: column;
         text-align: center;
     }
 
-    .footer-links, .footer-social, .footer-bottom-links {
+    .footer-links,
+    .footer-social,
+    .footer-bottom-links {
         justify-content: center;
     }
 }
@@ -1811,11 +1859,13 @@ footer {
     }
 
     .circle-progress i {
-        font-size: 28px; /* Adjust icon size for smaller circles */
+        font-size: 28px;
+        /* Adjust icon size for smaller circles */
     }
 
     .circle-svg circle {
-        r: calc(50% - 4px); /* Adjust radius for smaller stroke-width */
+        r: calc(50% - 4px);
+        /* Adjust radius for smaller stroke-width */
         stroke-width: 4;
     }
 }
@@ -1827,11 +1877,13 @@ footer {
     }
 
     .circle-progress i {
-        font-size: 20px; /* Adjust icon size for smallest circles */
+        font-size: 20px;
+        /* Adjust icon size for smallest circles */
     }
 
     .circle-svg circle {
-        r: calc(50% - 3px); /* Adjust radius for smallest stroke-width */
+        r: calc(50% - 3px);
+        /* Adjust radius for smallest stroke-width */
         stroke-width: 3;
     }
 }
@@ -1985,7 +2037,8 @@ form:hover {
     position: relative;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     width: 100%;
     padding: 15px;
     border: 2px solid #e0e0e0;
@@ -1995,19 +2048,22 @@ form input, form textarea {
     background: transparent;
 }
 
-form input:focus, form textarea:focus {
+form input:focus,
+form textarea:focus {
     border-color: #0072ff;
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 114, 255, 0.2);
 }
 
-.dark-mode form input, .dark-mode form textarea {
+.dark-mode form input,
+.dark-mode form textarea {
     background: #333;
     color: white;
     border: 2px solid #444;
 }
 
-.dark-mode form input:focus, .dark-mode form textarea:focus {
+.dark-mode form input:focus,
+.dark-mode form textarea:focus {
     border-color: #ff9800;
     box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2);
 }

@@ -1,4 +1,5 @@
 /* responsive.css - Mobile Responsive Styling */
+
 /* Tablet Styles */
 @media (max-width: 992px) {
     .header-content {
@@ -30,11 +31,39 @@
     }
 
     .skill-cards {
-        gap: 20px;
+        gap: 30px;
+        justify-content: center;
     }
 
     .skill-card {
-        width: 130px;
+        width: 120px;
+    }
+
+    .skill-circle {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 8px;
+    }
+
+    .circle-svg {
+        width: 100px;
+        height: 100px;
+    }
+
+    .circle-progress {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .circle-progress i {
+        font-size: 22px;
     }
 
     .project-card {
@@ -57,7 +86,6 @@
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-
     html,
     body {
         overflow-x: hidden;
@@ -71,23 +99,18 @@
 
     header {
         padding: 100px 1rem 120px;
-        /* Add more top padding to prevent navbar overlap */
         min-height: auto;
-        /* Prevent excessive height on mobile */
     }
 
-    /* Adjust the transition element on mobile */
     .page-transition {
         margin-top: -80px;
         height: 120px;
-        /* Reduced height for better proportions */
     }
 
     .header-content {
         padding: 2rem 1.5rem;
         width: 90%;
         margin-bottom: 30px;
-        /* Add space at the bottom */
     }
 
     header h1 {
@@ -98,7 +121,6 @@
         font-size: 1rem;
         padding: 8px 15px;
         white-space: normal;
-        /* Allow text to wrap */
         max-width: 100%;
     }
 
@@ -122,10 +144,8 @@
         width: 100%;
         box-sizing: border-box;
         margin-bottom: 40px;
-        /* Add more space between sections */
     }
 
-    /* Adjust skills section specifically */
     #skills {
         padding-top: 70px;
         padding-bottom: 70px;
@@ -143,32 +163,50 @@
         justify-content: center;
     }
 
-    .skill-circle {
-        width: 70px;
-        height: 70px;
+    /* Skills Section specific */
+    .skill-cards {
+        gap: 20px;
+        justify-content: center;
     }
 
-    .circle-progress i {
-        font-size: 20px;
-        /* Adjust icon size for smallest circles */
+    .skill-card {
+        width: 100px;
+        margin-bottom: 15px;
+    }
+
+    .skill-circle {
+        width: 85px;
+        height: 85px;
     }
 
     .circle-svg {
-        width: 70px;
-        height: 70px;
+        width: 85px;
+        height: 85px;
     }
 
-    .circle-svg circle {
-        cx: 35;
-        cy: 35;
-        r: 30;
-        stroke-width: 5;
+    .circle-progress {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .circle-fill {
-        stroke-dasharray: 188.4;
-        /* 2 * PI * 30 */
-        stroke-dashoffset: 188.4;
+    .circle-progress i {
+        font-size: 22px;
+    }
+
+    .skill-card h4 {
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+    }
+
+    .skill-percent {
+        font-size: 0.8rem;
     }
 
     .timeline::after {
@@ -188,77 +226,6 @@
     .timeline-item.left::after,
     .timeline-item.right::after {
         left: 21px;
-    }
-
-    /* Improve skill circles display */
-    .skill-cards {
-        gap: 15px;
-        justify-content: center;
-    }
-
-    .skill-card {
-        width: 100px;
-        /* Smaller card width */
-        margin-bottom: 15px;
-        /* Add space between rows */
-    }
-
-    .circle-svg {
-        width: 85px;
-        height: 85px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        overflow: visible;
-    }
-
-    .circle-svg circle {
-        cx: 42.5;
-        cy: 42.5;
-        r: 35;
-        stroke-width: 6;
-        /* Thinner stroke for smaller circles */
-    }
-
-    .circle-fill {
-        stroke-dasharray: 219.8;
-        /* 2 * PI * 35 */
-        stroke-dashoffset: 219.8;
-    }
-
-    .circle-progress {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .circle-progress i {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 28px;
-        /* Smaller icon */
-        line-height: 0;
-        /* Critical for proper centering */
-        width: auto;
-        height: auto;
-    }
-
-    .skill-card h4 {
-        font-size: 0.9rem;
-        /* Smaller text */
-        margin-bottom: 3px;
-    }
-
-    .skill-percent {
-        font-size: 0.8rem;
-        /* Smaller percentage text */
     }
 
     .project-card {
@@ -322,17 +289,13 @@
 
 /* Small Mobile Styles */
 @media (max-width: 480px) {
-
-    /* Prevent zooming */
     html,
     body {
         touch-action: pan-x pan-y;
     }
 
-    /* Further adjust the header padding and transition for very small screens */
     header {
         padding: 90px 1rem 150px;
-        /* Adjusted top and bottom padding */
         min-height: auto;
     }
 
@@ -359,19 +322,16 @@
 
     .header-image-container {
         margin-bottom: 15px;
-        /* Add space below the image */
     }
 
     .header-image-container img {
         width: 150px;
         height: 150px;
         margin: 0 auto;
-        /* Center the image */
     }
 
     .header-decoration {
         display: none;
-        /* Hide decorations on very small screens */
     }
 
     .about-text p {
@@ -386,16 +346,14 @@
         font-size: 1.5rem;
     }
 
-    /* Improve skill circles for small screens */
+    /* Skills Section specific small mobile */
     .skill-cards {
-        gap: 10px;
-        /* Even smaller gap */
+        gap: 15px;
         justify-content: center;
     }
 
     .skill-card {
         width: 80px;
-        /* Even smaller card width */
         margin-bottom: 12px;
         display: flex;
         flex-direction: column;
@@ -404,75 +362,39 @@
 
     .skill-circle {
         width: 70px;
-        /* Even smaller circle */
         height: 70px;
-        margin: 0 auto 5px;
-        position: relative;
     }
 
     .circle-svg {
         width: 70px;
         height: 70px;
-        overflow: visible;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .circle-svg circle {
-        cx: 35;
-        cy: 35;
-        r: 30;
-        stroke-width: 5;
-        /* Thinner stroke for smaller circles */
-    }
-
-    .circle-fill {
-        stroke-dasharray: 188.4;
-        /* 2 * PI * 30 */
-        stroke-dashoffset: 188.4;
-        transition: stroke-dashoffset 0.5s ease;
-        /* Faster transition for mobile */
     }
 
     .circle-progress {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         width: 100%;
         height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        /* Ensure icons are above the circle */
-    }
-
-    .circle-progress i {
-        font-size: 20px;
-        /* Even smaller icon */
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        line-height: 0;
-        /* Critical for proper centering */
-        width: auto;
-        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .circle-progress i {
+        font-size: 18px;
     }
 
     .skill-card h4 {
         font-size: 0.8rem;
-        /* Even smaller text */
-        margin-bottom: 2px;
+        margin-bottom: 3px;
     }
 
     .skill-percent {
         font-size: 0.7rem;
-        /* Even smaller percentage text */
     }
 
-    /* Adjust skill groups spacing and styling */
     .skill-group {
         margin-bottom: 25px;
     }
@@ -482,7 +404,6 @@
         margin-bottom: 15px;
     }
 
-    /* Improve spacing between skill groups */
     .skill-groups {
         gap: 20px;
     }
@@ -542,7 +463,6 @@
     form textarea {
         padding: 10px;
         font-size: 16px;
-        /* Prevent iOS zoom on focus */
     }
 
     .footer-logo {
@@ -555,7 +475,6 @@
         gap: 10px;
     }
 
-    /* Improve nav menu on small screens */
     .nav-links {
         width: 200px;
         right: 10px;

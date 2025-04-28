@@ -13,7 +13,7 @@ const contactForm = document.getElementById('contact-form');
 const formMessage = document.querySelector('.form-message');
 const navbar = document.querySelector('nav');
 
-// Function to Apply Theme
+// Apply Theme
 function applyTheme(theme) {
     if (theme === "dark") {
         document.body.classList.add('dark-mode');
@@ -26,9 +26,9 @@ function applyTheme(theme) {
     }
 }
 
-// Ensure Light Mode on First Load
+// On Document Ready
 document.addEventListener('DOMContentLoaded', () => {
-    applyTheme("light"); // Force Light mode on first load
+    applyTheme("light"); // Default to light mode
     initTypewriter();
     initBackToTop();
     initAOS();
@@ -37,16 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initNavbarScroll();
 
-    // Force recalculation of skill circles after a short delay
     setTimeout(() => {
-        const skillCircles = document.querySelectorAll('.circle-fill');
-        skillCircles.forEach(circle => {
-            updateCircleProgress(circle);
-        });
+        document.querySelectorAll('.circle-fill').forEach(updateCircleProgress);
     }, 500);
 });
 
-// Initialize Navbar Scroll Behavior
+// Navbar Scroll
 function initNavbarScroll() {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -57,21 +53,17 @@ function initNavbarScroll() {
     });
 }
 
-// Toggle Theme and Save Preference
+// Toggle Theme
 function toggleTheme() {
     const isDarkMode = document.body.classList.toggle('dark-mode');
     const newTheme = isDarkMode ? "dark" : "light";
     applyTheme(newTheme);
 }
 
-// Mobile Menu Toggle
+// Mobile Menu
 function toggleMenu() {
     const isActive = navLinks.classList.toggle('active');
-
-    // Add aria-expanded attribute for accessibility
     menuToggle.setAttribute('aria-expanded', isActive);
-
-    // Add animation effect
     if (isActive) {
         const links = navLinks.querySelectorAll('a');
         links.forEach((link, index) => {
@@ -90,7 +82,6 @@ function typeWriter(element, text, i = 0) {
     }
 }
 
-// Erase text effect
 function eraseText(element, text, i = text.length) {
     if (i > 0) {
         element.textContent = text.substring(0, i - 1);
@@ -100,13 +91,10 @@ function eraseText(element, text, i = text.length) {
     }
 }
 
-// Initialize Typewriter
 function initTypewriter() {
     const isMobile = window.innerWidth <= 768;
-
     document.querySelectorAll('.typewriter').forEach(el => {
         el.textContent = '';
-
         if (isMobile) {
             el.textContent = el.dataset.text;
             el.style.borderRight = 'none';
@@ -116,18 +104,17 @@ function initTypewriter() {
     });
 }
 
-// Back to Top Button
+// Back to Top
 function initBackToTop() {
     window.addEventListener('scroll', () => {
         backToTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
     });
-
     backToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
-// Initialize AOS
+// AOS Init
 function initAOS() {
     AOS.init({
         duration: 800,
@@ -137,108 +124,77 @@ function initAOS() {
     });
 }
 
-// Initialize Skill Bars Animation
+// Skill Circles Progress Animation
 function initSkillBars() {
+
+    function getColorForPercentage(percent) {
+        if (percent >= 80) return '#4CAF50'; // Green
+        if (percent >= 60) return '#FFC107'; // Yellow
+        return '#F44336'; // Red
+    }
+
     function updateCircleProgress(circle) {
-        const skillCard = circle.closest('.skill-card');
-        const percentElement = skillCard.querySelector('.skill-percent');
-        const percentText = percentElement.textContent;
-        const percentValue = parseInt(percentText.replace('%', ''));
+        const skillCircle = circle.closest('.skill-circle');
+        const percent = parseInt(skillCircle.getAttribute('data-percent')) || 0;
 
-        const color = getColorForPercentage(percentValue);
-        circle.style.stroke = color;
-
-        const icon = skillCard.querySelector('.circle-progress i');
-        if (icon) icon.style.color = color;
-
-        percentElement.style.color = color;
-
-        const radius = parseInt(circle.getAttribute('r'));
+        const isMobile = window.innerWidth <= 768;
+        const radius = isMobile ? 55 : 50; // Mobile ke liye radius 50, Desktop ke liye 50
         const circumference = 2 * Math.PI * radius;
-        circle.style.strokeDasharray = circumference;
-        const offset = circumference - (circumference * percentValue / 100);
 
-        circle.style.strokeDashoffset = circumference;
+        // Update attributes
+        circle.setAttribute('r', radius);
+        circle.setAttribute('cx', "50%");
+        circle.setAttribute('cy', "50%");
+        circle.style.strokeDasharray = circumference;
+
+        // Animate fill
         requestAnimationFrame(() => {
+            const offset = circumference - (percent / 100) * circumference;
             circle.style.strokeDashoffset = offset;
         });
 
-        circle.setAttribute('data-percent', percentValue);
-    }
-
-    function getColorForPercentage(percent) {
-        if (percent >= 80) return '#4CAF50';
-        if (percent >= 60) return '#FFC107';
-        return '#F44336';
-    }
-
-    const circleObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const circle = entry.target;
-                updateCircleProgress(circle);
-                circleObserver.unobserve(circle);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    const skillCircles = document.querySelectorAll('.circle-fill');
-    skillCircles.forEach(circle => {
-        const skillCircle = circle.closest('.skill-circle');
-        const percentValue = parseInt(skillCircle.getAttribute('data-percent'));
-
-        circle.setAttribute('data-percent', percentValue);
-        const color = getColorForPercentage(percentValue);
+        // Color adjustments
+        const color = getColorForPercentage(percent);
         circle.style.stroke = color;
 
         const icon = skillCircle.querySelector('.circle-progress i');
         if (icon) icon.style.color = color;
 
-        circleObserver.observe(circle);
+        const percentLabel = skillCircle.parentElement.querySelector('.skill-percent');
+        if (percentLabel) percentLabel.style.color = color;
+    }
+
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                updateCircleProgress(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.circle-fill').forEach(circle => {
+        observer.observe(circle);
     });
 
     window.addEventListener('resize', () => {
         clearTimeout(window.resizeTimer);
         window.resizeTimer = setTimeout(() => {
-            skillCircles.forEach(circle => {
-                updateCircleProgress(circle);
-            });
-        }, 250);
+            document.querySelectorAll('.circle-fill').forEach(updateCircleProgress);
+        }, 300);
     });
 
-    const themeToggle = document.querySelector('.theme-toggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
             setTimeout(() => {
-                skillCircles.forEach(circle => {
-                    updateCircleProgress(circle);
-                });
+                document.querySelectorAll('.circle-fill').forEach(updateCircleProgress);
             }, 100);
-        });
-    }
-
-    const barObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const progressBar = entry.target;
-                const width = progressBar.style.width;
-                progressBar.style.width = '0';
-                setTimeout(() => {
-                    progressBar.style.width = width;
-                }, 100);
-                barObserver.unobserve(progressBar);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    if (skillProgressBars.length > 0) {
-        skillProgressBars.forEach(bar => {
-            barObserver.observe(bar);
         });
     }
 }
 
-// Initialize Testimonial Slider
+// Testimonial Slider
 function initTestimonialSlider() {
     if (!testimonialSlider) return;
 
@@ -283,7 +239,7 @@ function initTestimonialSlider() {
     });
 }
 
-// Initialize Contact Form
+// Contact Form Handling
 function initContactForm() {
     if (!contactForm) return;
 
@@ -325,6 +281,16 @@ function initContactForm() {
             formMessage.className = 'form-message';
         }, 5000);
     }
+}
+
+// Resume Download
+function downloadResume() {
+    const link = document.createElement('a');
+    link.href = 'assets/resume/piyushgosaviresume.pdf';
+    link.download = 'Piyush_Gosavi_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 
 // Event Listeners
