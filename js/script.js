@@ -312,3 +312,25 @@ navLinks.querySelectorAll('a').forEach(link => {
         }
     });
 });
+
+// Mini Popup for Under Development Project Links
+document.querySelectorAll('.project-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+        const href = link.getAttribute('href');
+        if (!href || href === "#") {
+            e.preventDefault();
+            showPopupMessage("This project is currently under development.");
+        }
+    });
+});
+
+// Show Popup Message Function
+function showPopupMessage(message) {
+    const popup = document.getElementById('popup-message');
+    popup.textContent = message;
+    popup.classList.add('show');
+
+    setTimeout(() => {
+        popup.classList.remove('show');
+    }, 3000); // Hide after 3 seconds
+}
