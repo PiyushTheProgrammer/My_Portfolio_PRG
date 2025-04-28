@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Piyush: The Programmer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <nav>
+        <a href="#" class="nav-logo">Piyush<span>Dev</span></a>
+
+        <div class="nav-links" id="nav-links">
+            <a href="">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
+            <!-- <a href="#testimonials">Testimonials</a> -->
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header>
+        <!-- Decorative elements -->
+        <div class="header-decoration decoration-1"></div>
+        <div class="header-decoration decoration-2"></div>
+        <div class="header-decoration decoration-3"></div>
+
+        <div class="header-content">
+            <div class="header-text">
+                <h1 id="intro-text">Hi, I'm</h1>
+                <h1><span class="name">Piyush Gosavi</span></h1>
+                <p class="typewriter" data-text="Web Developer | Security Tester | Problem Solver"></p>
+
+                <div class="header-cta">
+                    <a href="#projects" class="header-btn primary-btn"><i class="fas fa-code"></i> View Projects</a>
+                    <a href="#contact" class="header-btn secondary-btn"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                </div>
+            </div>
+
+            <div class="header-image-container">
+                <img src="profile.jpg" alt="Profile Picture">
+            </div>
+        </div>
+    </header>
+
+    <!-- Transition element between header and content -->
+    <div class="page-transition">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="wave-svg">
+            <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+
+    <main>
+        <section id="about" data-aos="fade-up">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p>Hello! I'm <span class="highlight">Piyush Gosavi</span>, a passionate 3rd-year diploma student in Information Technology with a keen interest in web development and cybersecurity.</p>
+                    <p>I specialize in building responsive web applications and implementing security measures to protect digital assets. My journey in tech started when I was 15, tinkering with HTML and CSS to create simple websites.</p>
+                    <p>When I'm not coding, you can find me participating in CTF competitions, contributing to open-source projects, or exploring the latest tech trends. I believe in continuous learning and pushing the boundaries of what's possible with technology.</p>
+
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2025</div>
+                        <h3>Diploma in Information Technology</h3>
+                        <p>Pursuing my diploma with focus on web development, cybersecurity, and cloud computing.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - 2025</div>
+                        <h3>Web Development Intern</h3>
+                        <p>Worked on front-end development using React.js and implemented responsive designs.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025</div>
+                        <h3>AWS Certified Cloud Practitioner</h3>
+                        <p>Earned certification demonstrating knowledge of AWS cloud services and architecture.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" data-aos="fade-up">
+            <h2>Skills</h2>
+            <div class="skills-intro">
+                <p>Here's a showcase of my technical expertise and proficiency in various technologies and tools.</p>
+            </div>
+
+            <div class="skills-container">
+                <div class="skill-groups">
+                    <!-- Frontend Skills -->
+                    <div class="skill-group" data-aos="fade-up">
+                        <h3 class="group-title">Frontend</h3>
+                        <div class="skill-cards">
+                            <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="skill-circle" data-percent="90">
+                                    <div class="circle-progress">
+                                        <i class="fab fa-html5"></i>
+                                    </div>
+                                    <svg class="circle-svg">
+                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-fill" cx="60" cy="60" r="50"></circle>
+                                    </svg>
+                                </div>
+                                <h4>HTML/CSS</h4>
+                                <span class="skill-percent">90%</span>
+                            </div>
+
+                            <div class="skill-card" data-aos="zoom-in" data-aos-delay="150">
+                                <div class="skill-circle" data-percent="70">
+                                    <div class="circle-progress">
+                                        <i class="fab fa-js-square"></i>
+                                    </div>
+                                    <svg class="circle-svg">
+                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-fill" cx="60" cy="60" r="50"></circle>
+                                    </svg>
+                                </div>
+                                <h4>JavaScript</h4>
+                                <span class="skill-percent">70%</span>
+                            </div>
+
+                            <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="skill-circle" data-percent="45">
+                                    <div class="circle-progress">
+                                        <i class="fab fa-react"></i>
+                                    </div>
+                                    <svg class="circle-svg">
+                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-fill" cx="60" cy="60" r="50"></circle>
+                                    </svg>
+                                </div>
+                                <h4>React.js</h4>
+                                <span class="skill-percent">45%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend Skills -->
+                    <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="group-title">Backend</h3>
+                        <div class="skill-cards">
+                            <div class="skill-card" data-aos="zoom-in" data-aos-delay="250">
+                                <div class="skill-circle" data-percent="85">
+                                    <div class="circle-progress">
+                                        <i class="fab fa-python"></i>
+                                    </div>
+                                    <svg class="circle-svg">
+                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-fill" cx="60" cy="60" r="50" style="stroke-dashoffset: calc(315 - (315 * 85) / 100);"></circle>
+                                    </svg>
+                                </div>
+                                <h4>Python</h4>
+                                <span class="skill-percent">92%</span>
+                            </div>
+
+                            <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="skill-circle" data-percent="75">
+                                    <div class="circle-progress">
+                                        <i class="fas fa-server"></i>
+                                    </div>
+                                    <svg class="circle-svg">
+                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-fill" cx="60" cy="60" r="50" style="stroke-dashoffset: calc(315 - (315 * 75) / 100);"></circle>
+                                    </svg>
+                                </div>
+                                <h4>Flask/Django</h4>
+                                <span class="skill-percent">90%</span>
+                            </div>
+
+                            <div class="skill-card" data-aos="zoom-in" data-aos-delay="350">
+                                <div class="skill-circle" data-percent="70">
+                                    <div class="circle-progress">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <svg class="circle-svg">
+                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-fill" cx="60" cy="60" r="50" style="stroke-dashoffset: calc(315 - (315 * 70) / 100);"></circle>
+                                    </svg>
+                                </div>
+                                <h4>SQL/NoSQL</h4>
+                                <span class="skill-percent">83%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Security Skills -->
+                    <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="group-title">DevOps & Security</h3>
+                        <div class="skill-cards">
+                            <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="skill-circle" data-percent="80">
+                                    <div class="circle-progress">
+                                        <i class="fab fa-aws"></i>
+                                    </div>
+                                    <svg class="circle-svg">
+                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-fill" cx="60" cy="60" r="50" style="stroke-dashoffset: calc(315 - (315 * 80) / 100);"></circle>
+                                    </svg>
+                                </div>
+                                <h4>AWS</h4>
+                                <span class="skill-percent">75%</span>
+                            </div>
+
+                            <div class="skill-card" data-aos="zoom-in" data-aos-delay="450">
+                                <div class="skill-circle" data-percent="75">
+                                    <div class="circle-progress">
+                                        <i class="fab fa-docker"></i>
+                                    </div>
+                                    <svg class="circle-svg">
+                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-fill" cx="60" cy="60" r="50" style="stroke-dashoffset: calc(315 - (315 * 75) / 100);"></circle>
+                                    </svg>
+                                </div>
+                                <h4>Docker</h4>
+                                <span class="skill-percent">80%</span>
+                            </div>
+
+                            <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+                                <div class="skill-circle" data-percent="85">
+                                    <div class="circle-progress">
+                                        <i class="fas fa-user-shield"></i>
+                                    </div>
+                                    <svg class="circle-svg">
+                                        <circle class="circle-bg" cx="60" cy="60" r="50"></circle>
+                                        <circle class="circle-fill" cx="60" cy="60" r="50" style="stroke-dashoffset: calc(315 - (315 * 85) / 100);"></circle>
+                                    </svg>
+                                </div>
+                                <h4>Web Security</h4>
+                                <span class="skill-percent">89%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="other-skills" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Other Skills</h3>
+                    <div class="tag-cloud">
+                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+                        <span class="skill-tag"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+                        <span class="skill-tag"><i class="fas fa-comments"></i> Communication</span>
+                        <span class="skill-tag"><i class="fas fa-users"></i> Team Leadership</span>
+                        <span class="skill-tag"><i class="fas fa-tasks"></i> Project Management</span>
+                        <span class="skill-tag"><i class="fas fa-code-branch"></i> Version Control</span>
+                        <span class="skill-tag"><i class="fas fa-bug"></i> Debugging</span>
+                        <span class="skill-tag"><i class="fas fa-terminal"></i> Command Line</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" data-aos="fade-up">
+            <h2>Projects</h2>
+            <div class="projects-intro">
+                <p>Here are some of my recent projects that showcase my skills and expertise. Each project represents a unique challenge that I've tackled using different technologies and approaches.</p>
+            </div>
+            <div class="project-container">
+                <div class="project-card" data-aos="zoom-in">
+                    <img src="assets/stock_forecasting.jpg" alt="Stock Forecasting">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Data Science</span>
+                        </div>
+                        <h3>Stock Forecasting</h3>
+                        <p>Implemented stock price prediction using ARIMA, LSTM, and Linear Regression models with 85% accuracy on test data.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="assets/sentiment_analysis.jpg" alt="Sentiment Analysis">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Flask</span>
+                        </div>
+                        <h3>Sentiment Analysis</h3>
+                        <p>Developed an NLP model to analyze sentiments in tweets and reviews with a web interface for real-time analysis.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/file_encryption.jpg" alt="File Encryption">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Cryptography</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Security</span>
+                        </div>
+                        <h3>File Encryption & Decryption</h3>
+                        <p>Created a security tool for encrypting and decrypting files using AES-256 encryption to enhance privacy and data protection.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/PiyushTheProgrammer/File_Encryption-Decryption_Tool" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="assets/portfolio.jpg" alt="Portfolio Website">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">HTML/CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Responsive</span>
+                        </div>
+                        <h3>Portfolio Website</h3>
+                        <p>Designed and developed a responsive portfolio website with dark/light mode toggle and smooth animations.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="view-more-projects">View More Projects</a>
+        </section>
+
+        <section id="achievements" data-aos="fade-up">
+            <h2>Achievements & Certifications</h2>
+            <div class="achievements-container">
+                <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="achievement-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="achievement-title">AWS Certified Cloud Practitioner</h3>
+                    <p class="achievement-description">Earned AWS certification demonstrating foundational knowledge of cloud computing, security, and AWS services.</p>
+                    <div class="achievement-date">December 2023</div>
+                </div>
+
+                <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="achievement-title">Hackathon Winner</h3>
+                    <p class="achievement-description">First place in regional hackathon for developing an innovative solution for healthcare data management.</p>
+                    <div class="achievement-date">October 2023</div>
+                </div>
+
+                <div class="achievement-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="achievement-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="achievement-title">Python for Data Science</h3>
+                    <p class="achievement-description">Completed advanced certification in Python programming for data analysis and visualization.</p>
+                    <div class="achievement-date">August 2023</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="testimonials" data-aos="fade-up">
+            <h2>What People Say</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-slider">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">“</div>
+                        <p class="testimonial-text">Piyush is an exceptional developer with a keen eye for detail. His work on our web application exceeded our expectations, delivering not just functionality but also an intuitive user experience.</p>
+                        <div class="testimonial-author">
+                            <img src="assets/testimonial1.jpg" alt="John Smith" class="testimonial-author-img">
+                            <div class="testimonial-author-info">
+                                <div class="testimonial-author-name">John Smith</div>
+                                <div class="testimonial-author-title">Project Manager, TechCorp</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">“</div>
+                        <p class="testimonial-text">Working with Piyush was a pleasure. His technical skills combined with his ability to understand business requirements made our collaboration seamless and productive.</p>
+                        <div class="testimonial-author">
+                            <img src="assets/testimonial2.jpg" alt="Sarah Johnson" class="testimonial-author-img">
+                            <div class="testimonial-author-info">
+                                <div class="testimonial-author-name">Sarah Johnson</div>
+                                <div class="testimonial-author-title">CEO, StartupInnovate</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">“</div>
+                        <p class="testimonial-text">Piyush's security expertise was invaluable to our project. He identified and fixed vulnerabilities that we hadn't even considered, making our application much more secure.</p>
+                        <div class="testimonial-author">
+                            <img src="assets/testimonial3.jpg" alt="Michael Chen" class="testimonial-author-img">
+                            <div class="testimonial-author-info">
+                                <div class="testimonial-author-name">Michael Chen</div>
+                                <div class="testimonial-author-title">CTO, SecureData Inc.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-controls">
+                    <button class="testimonial-control prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+                    <button class="testimonial-control next-testimonial"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section> -->
+
+        <section id="contact" data-aos="fade-up">
+            <h2>Contact Me</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p><span class="contact-icon"><i class="fas fa-envelope"></i></span> <a href="mailto:piyushgosavi90@gmail.com">piyushgosavi90@gmail.com</a></p>
+                    <p><span class="contact-icon"><i class="fab fa-linkedin"></i></span> <a href="https://www.linkedin.com/in/piyush-gosavi-311a50291" target="_blank" rel="noopener noreferrer">linkedin.com/in/piyush-gosavi</a></p>
+                    <p><span class="contact-icon"><i class="fab fa-github"></i></span> <a href="#" target="_blank" rel="noopener noreferrer">github.com/yourusername</a></p>
+                    <p><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span> Mumbai, Maharashtra, India</p>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form action="mailto:piyushgosavi90@gmail.com" method="post" enctype="text/plain" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                    <div class="form-message"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="footer-logo">Piyush<span>Dev</span></a>
+
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">&copy; 2025 Piyush Gosavi. All Rights Reserved.</div>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

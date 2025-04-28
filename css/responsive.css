@@ -1,0 +1,296 @@
+/* responsive.css - Mobile Responsive Styling */
+/* Tablet Styles */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column-reverse;
+        padding: 2.5rem 2rem;
+        width: 95%;
+    }
+
+    .header-text {
+        text-align: center;
+        padding-right: 0;
+        margin-top: 2rem;
+    }
+
+    header h1 {
+        font-size: 2.8rem;
+    }
+
+    .header-cta {
+        justify-content: center;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .skill-cards {
+        gap: 20px;
+    }
+
+    .skill-card {
+        width: 130px;
+    }
+
+    .project-card {
+        width: calc(50% - 15px);
+        min-width: 250px;
+    }
+
+    .testimonial-card {
+        min-width: 300px;
+    }
+
+    .achievement-card {
+        min-width: 220px;
+    }
+
+    .contact-container {
+        gap: 30px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    header {
+        padding: 1rem;
+        padding-bottom: 120px; /* Add extra padding at the bottom for the transition element */
+    }
+
+    /* Adjust the transition element on mobile */
+    .page-transition {
+        margin-top: -80px;
+    }
+
+    .header-content {
+        padding: 2rem 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .typewriter {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .header-cta {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .header-btn {
+        width: 100%;
+    }
+
+    .header-image-container img {
+        width: 200px;
+        height: 200px;
+    }
+
+    section {
+        padding: 60px 15px;
+    }
+
+    .about-stats {
+        justify-content: center;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline-item.left::after,
+    .timeline-item.right::after {
+        left: 21px;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .project-content {
+        padding: 20px;
+    }
+
+    .project-tags {
+        gap: 5px;
+    }
+
+    .project-tag {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+
+    .testimonial-card {
+        min-width: 260px;
+    }
+
+    .testimonial-controls {
+        margin-top: 20px;
+    }
+
+    .achievement-card {
+        min-width: 100%;
+    }
+
+    .contact-info, .contact-form-container {
+        max-width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-content, .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-links, .footer-social, .footer-bottom-links {
+        justify-content: center;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    /* Further adjust the header padding and transition for very small screens */
+    header {
+        padding-bottom: 150px;
+    }
+
+    .page-transition {
+        margin-top: -70px;
+        height: 120px;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    #intro-text {
+        font-size: 1.5rem;
+    }
+
+    .typewriter {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .header-image-container img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .header-decoration {
+        display: none; /* Hide decorations on very small screens */
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .stat-box {
+        min-width: 90px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .skill-card {
+        width: 120px;
+    }
+
+    .skill-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .circle-progress i {
+        font-size: 30px;
+    }
+
+    .skill-tag {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .project-card img {
+        height: 180px;
+    }
+
+    .project-content {
+        padding: 15px;
+    }
+
+    .project-links {
+        gap: 10px;
+    }
+
+    .project-link {
+        font-size: 0.9rem;
+    }
+
+    .testimonial-card {
+        min-width: 220px;
+        padding: 20px;
+    }
+
+    .testimonial-author-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .testimonial-text {
+        font-size: 0.9rem;
+    }
+
+    .contact-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    .social-link {
+        width: 35px;
+        height: 35px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    form input, form textarea {
+        padding: 10px;
+    }
+
+    .footer-logo {
+        font-size: 1.5rem;
+    }
+
+    .footer-links, .footer-social, .footer-bottom-links {
+        gap: 10px;
+    }
+}
